@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="heading">Assignment Form</h1>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name">
+            <p id="namePara"></p>
+        </div>
+        <div>
+            <label for="email">Email: </label>
+            <input type="text" id="email">
+            <p id="emailPara"></p>
+        </div>
+        <div>
+            <label for="website">Website: </label>
+            <input type="text" id="website">
+            <p id="websitePara"></p>
+        </div>
+        <div>
+            <div class="container">
+                <label for="message">Message: </label>
+                <textArea rows="6" id="message"></textArea>
+            </div>
+            <p id="messagePara" class="message"></p>
+        </div>
+        <button>Submit</button>
+    </div>
+    <script>
+        let nameEl = document.getElementById("name");
+        let emailEl = document.getElementById("email");
+        let websiteEl = document.getElementById("website");
+        let messageEl = document.getElementById("message");
+        let nameParaEl = document.getElementById("namePara");
+        let emailParaEl = document.getElementById("emailPara");
+        let websiteParaEl = document.getElementById("websitePara");
+        let messageParaEl = document.getElementById("messagePara");
+        nameEl.addEventListener("blur", function () {
+            if (nameEl.value === "") {
+                nameParaEl.textContent = "This field is required";
+                nameParaEl.style.color = "red";
+                nameParaEl.style.fontSize = "14px";
+            }
+            else {
+                nameParaEl.textContent = "";
+            }
+        });
+        emailEl.addEventListener("blur", function () {
+            if (emailEl.value === "") {
+                emailParaEl.textContent = "This field is required";
+                emailParaEl.style.color = "red";
+                emailParaEl.style.fontSize = "14px";
+            }
+            else {
+                emailParaEl.textContent = "";
+            }
+        });
+        websiteEl.addEventListener("blur", function () {
+            if (websiteEl.value === "") {
+                websiteParaEl.textContent = "This field is required";
+                websiteParaEl.style.color = "red";
+                websiteParaEl.style.fontSize = "14px";
+            }
+            else {
+                websiteParaEl.textContent = "";
+            }
+        });
+        messageEl.addEventListener("blur", function () {
+            if (messageEl.value === "") {
+                messageParaEl.textContent = "This field is required";
+                messageParaEl.style.color = "red";
+                messageParaEl.style.fontSize = "14px";
+            }
+            else {
+                messageParaEl.textContent = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
